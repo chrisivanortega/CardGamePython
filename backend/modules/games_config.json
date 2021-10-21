@@ -1,0 +1,15 @@
+{
+    "classic":
+        {
+            "symbols":{
+                "clubs":"♣",
+                "spades":"♤",
+                "hearts":"♥",
+                "diamonds":"♦"
+        },
+            "cards_per_symbol":13,
+            "init_cards_per_player":4
+
+    }
+
+}
