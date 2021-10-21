@@ -27,7 +27,6 @@ class Game():
 
     def init_game(self):
         # create the game with the current settings
-
         with open('games_config.json', 'r') as f:
             self.config = json.load(f)   
         try:
@@ -56,27 +55,24 @@ class Game():
         output+= f"{len(self.Deck.cards)}"
         return output
 
-    
-
-    def main():
-        pass
 
 if __name__ == "__main__":
-
+    # init the object Game with two games and settings from a json file
     game_on = Game(game_type='classic',players = [Player("Mario"),Player("Luigi")])
     game_on.init_game()
+    # init the deck cards according to game settings
     game_on.Deck.suffle()
-
+    # will add the cards according to game settings
     game_on.init_deliver_to_players()
-
-
     # add another card to a new payer just for testing
     peach = Player("Peach")
     game_on.Players.append(peach)
+    # adding a card one by one 
     game_on.deliver_card_to_player(peach,game_on.Deck.cards.pop())
     game_on.deliver_card_to_player(peach,game_on.Deck.cards.pop())
     game_on.deliver_card_to_player(peach,game_on.Deck.cards.pop())
     game_on.deliver_card_to_player(peach,game_on.Deck.cards.pop())
 
+    # by printing the class the method __str__ shows the status of the deck and players
     print(game_on)
     
